@@ -5,6 +5,7 @@
     <webcam
       [height]="500"
       [width]="500"
+      [onionOpacity]="opacity"
       [trigger]="triggerObservable"
       (imageCapture)="handleImage($event)"
       *ngIf="showWebcam"
@@ -42,6 +43,11 @@
       style="width: 500px"
     />
     <button (click)="showNextWebcam(deviceId)">Activate</button>
+    <br />
+    <br />
+    Opacity of onion skin (0-1)
+    <input type="text" [(ngModel)]="opacity" />
+    <!-- <p>{{ opacity }}</p> -->
     <br />
     Preferred facing mode:
     <input
