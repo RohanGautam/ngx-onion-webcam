@@ -1,6 +1,6 @@
 {
-  "name": "ngx-onion-webcam",
-  "version": "0.1.0",
+  "name": "@rohangautam/ngx-onion-webcam",
+  "version": "0.1.1",
   "author": "RohanGautam",
   "contributors": [
     "RohanGautam",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/basst314/ngx-webcam.git"
+    "url": "https://github.com/RohanGautam/ngx-onion-webcam.git"
   },
   "keywords": [
     "Webcam",
