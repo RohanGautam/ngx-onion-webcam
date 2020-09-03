@@ -29,6 +29,7 @@ export class WebcamComponent implements AfterViewInit, OnDestroy {
   @Input() public width: number = 640;
   /** Defines the max height of the webcam area in px */
   @Input() public height: number = 480;
+  @Input() public onionOpacity: number = 0.5;
   /** Defines base constraints to apply when requesting video track from UserMedia */
   @Input() public videoOptions: MediaTrackConstraints =
     WebcamComponent.DEFAULT_VIDEO_OPTIONS;
@@ -63,6 +64,8 @@ export class WebcamComponent implements AfterViewInit, OnDestroy {
 
   /** Indicates whether the video device is ready to be switched */
   public videoInitialized: boolean = false;
+  /** To keep track of the previous image taken */
+  public previousImageUrl: string;
 
   /** If the Observable represented by this subscription emits, an image will be captured and emitted through
    * the 'imageCapture' EventEmitter */
@@ -291,7 +294,7 @@ export class WebcamComponent implements AfterViewInit, OnDestroy {
     if (this.captureImageData) {
       imageData = context2d.getImageData(0, 0, _canvas.width, _canvas.height);
     }
-
+    this.previousImageUrl = dataUrl;
     this.imageCapture.next(new WebcamImage(dataUrl, mimeType, imageData));
   }
 

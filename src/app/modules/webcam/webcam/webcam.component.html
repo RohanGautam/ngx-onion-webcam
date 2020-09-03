@@ -1,6 +1,8 @@
+<!-- <div class="webcam-wrapper" (click)="hw(video.height, video.width)"> -->
 <div class="webcam-wrapper" (click)="imageClick.next()">
   <video
     #video
+    class="video-element"
     [width]="videoWidth"
     [height]="videoHeight"
     [class]="videoStyleClasses"
@@ -9,6 +11,17 @@
     playsinline
     (resize)="videoResize()"
   ></video>
+  <img
+    class="video-overlay"
+    *ngIf="previousImageUrl"
+    [src]="previousImageUrl"
+    [height]="videoHeight"
+    [width]="videoWidth"
+    [ngStyle]="{
+      opacity: onionOpacity
+    }"
+    alt=""
+  />
   <div
     class="camera-switch"
     *ngIf="
