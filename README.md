@@ -9,7 +9,7 @@ A simple Angular webcam component. Pure &amp; minimal, no Flash-fallback. <a hre
 **Minimal.** No unnecessary Flash-fallbacks, no bundle-size bloating.
 
 ## Demo
-Try out the <a href="https://basst314.github.io/ngx-webcam/?" target="_blank">Live-Demo</a> or see the <a href="https://github.com/basst314/ngx-webcam-demo" target="_blank">Demo-Project</a>.
+Try out the <a href="https://rohangautam.github.io/ngx-onion-webcam/" target="_blank">Live-Demo</a>.
 
 ## Features
 * Webcam live view
@@ -36,32 +36,24 @@ Try out the <a href="https://basst314.github.io/ngx-webcam/?" target="_blank">Li
 * User permissions to access the camera
 
 ## Usage
-1) Install the library via standard npm command:
-
-`npm install --save ngx-webcam`
-
-2) Import the `WebcamModule` into your Angular module:
-
+This onion-skin version is not avaliable in npm. Clone the repo, and drop the `app/modules/webcam` folder into your project to be ready to use the `WebcamModule`.
+In `app.module.ts`,
 ```typescript
-import {WebcamModule} from 'ngx-webcam';
-
+import {WebcamModule} from './modules/webcam/webcam.module';
+...
 @NgModule({
-  imports: [
-    WebcamModule,
+  declarations: [
     ...
   ],
-  ...
+  imports: [
+    ...
+    WebcamModule
+  ],
+  providers: [],
+  bootstrap: [...]
 })
-export class AppModule { }
 ```
-
-3) Use the `WebcamComponent` on your pages:
-
-`<webcam></webcam>`
-
-As simple as that. 
-
-For more examples, see the code in the <a href="https://github.com/basst314/ngx-webcam-demo" target="_blank">Demo-Project</a>.
+ Now, you can use the `<webcam></webcam>` component in your pages.
 
 ## Options and Events
 This section describes the basic inputs/outputs of the component. All inputs are optional.
