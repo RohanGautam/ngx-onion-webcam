@@ -1,10 +1,16 @@
 {
-  "name": "ngx-webcam",
-  "version": "0.3.0",
-  "author": "basst314",
+  "name": "ngx-onion-webcam",
+  "version": "0.1.0",
+  "author": "RohanGautam",
   "contributors": [
-    "davidshen84"
+    "RohanGautam",
+    "basst314",
+    "davidshen84",
+    "rickdroio"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
